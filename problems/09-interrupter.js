@@ -9,7 +9,7 @@ console.log(rudePerson("how are you")); // prints "how what are what you"
 console.log(rudePerson("I like pie")); // prints "I what like what pie"
 
 
-Invoking the interrupter function again: 
+Invoking the interrupter function again:
 let rudePerson2 = interrupter("yo"); // => returns a function
 console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
@@ -17,6 +17,36 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 ***********************************************************************/
 
 // your code here!
+
+function interrupter (interruptingWord) {
+  return function(str){
+    let words = str.split(' ')
+    let newStr = '';
+    let interreuptedWords = []
+    for (let i = 0; i<words.length; i++){
+      interreuptedWords.push(words[i])
+      if (i !== words.length -1){
+        interreuptedWords.push(interruptingWord)
+      }
+    }
+    newStr = interreuptedWords.join(' ');
+    return newStr;
+    //str + interruptingWord
+    //string plus interruptingWord + str + interruptingWord + str
+  };
+
+}
+
+
+let rudePerson = interrupter("what"); // => returns a function
+console.log(rudePerson("how are you")); // prints "how what are what you"
+console.log(rudePerson("I like pie")); // prints "I what like what pie"
+
+
+// Invoking the interrupter function again:
+let rudePerson2 = interrupter("yo"); // => returns a function
+console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
