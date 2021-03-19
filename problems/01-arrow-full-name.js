@@ -21,10 +21,12 @@ const arrowGetFullName = (person) => {
 
     for(let i = 0; i < values.length; i++){
       let value = values[i];
-
+      if(typeof value === 'string'){
+        nameArray.push(value)
+      }
 
     }
-
+    return nameArray.join(' ')
 
 }
 
