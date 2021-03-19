@@ -19,11 +19,16 @@ funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
 ***********************************************************************/
 
 // your code here!
-function funcTimer(time, func){
-
-  let timeoutID = 
+const funcTimer = (time, func) => {
+ global.setTimeout(func, time);
 
 }
+
+// function partyFunc () {
+//   console.log("Party time!")
+// }
+
+// funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
 
 function partyFunc () {
   console.log("Party time!")
