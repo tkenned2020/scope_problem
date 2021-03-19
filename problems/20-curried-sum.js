@@ -44,6 +44,37 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 // your code here
 
+let curriedSum = (numArgs) => {
+  let emptyArray = [];
+  let sumTotal;
+  return function butter(num) {
+    if(emptyArray.length < numArgs){
+      emptyArray.push(num)
+
+    }
+    if (emptyArray.length === numArgs){
+      sumTotal = emptyArray.reduce((accum, number) => accum + number)
+      return sumTotal;
+    } else {
+      return butter;
+    }
+
+  }
+}
+
+
+
+const sum = curriedSum(4); // returns a function
+console.log(sum(5)); // returns a function
+console.log(sum(20)); // returns a function
+console.log(sum(30)); // returns a function
+console.log(sum(20)); // => returns 75
+
+// 2
+// this function can also be invoked like this:
+// const sum1 = curriedSum(3)(2)(1)(7); // => returns 10
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
