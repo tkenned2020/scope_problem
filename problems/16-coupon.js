@@ -17,6 +17,26 @@ console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 
 // your code here!
 
+function coupon(discount) {
+  let arrayOfAppliedDiscounts = [];
+  return function (array){
+    for (let i = 0; i < array.length; i++){
+        let price = array[i];
+        let appliedDiscount = price - (price*discount);
+        arrayOfAppliedDiscounts.push(appliedDiscount);
+    }
+    return arrayOfAppliedDiscounts;
+  };
+};
+
+
+let tenPercent = coupon(0.1);
+console.log(tenPercent([10, 20, 30])); // [ 9, 18, 27 ]
+
+
+let twentyPercent = coupon(0.2);
+console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
